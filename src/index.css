@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --theme-color: rgb(59, 130, 246);
+}
+
+.text-theme {
+  color: var(--theme-color);
+}
+
+.bg-theme {
+  background-color: var(--theme-color);
+}
+
+.hover\:bg-theme:hover {
+  background-color: var(--theme-color);
+}
+
+.hover\:text-theme:hover {
+  color: var(--theme-color);
+}
+
+.border-theme {
+  border-color: var(--theme-color);
+}
+
+/* Add this to your global CSS file (e.g., globals.css) */
+
+:root {
+  /* Default theme color */
+  --theme-color: rgb(59, 130, 246); /* Default blue */
+  
+  /* Light mode variables */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --border-color: #e5e7eb;
+}
+
+.dark {
+  /* Dark mode variables */
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --border-color: #374151;
+}
+
+/* You can use these CSS variables throughout your app */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* You can also create theme color variants */
+.btn-primary {
+  background-color: var(--theme-color);
+  color: white;
+}
+
+.text-theme {
+  color: var(--theme-color);
+}
+
+.border-theme {
+  border-color: var(--theme-color);
+}
+
+/* Apply dynamic styles with data attributes */
+[data-theme-hover="true"]:hover {
+  color: var(--theme-color);
+}
+
+/* Your existing styles */
+
+/* Smooth color transitions */
+* {
+  transition-property: color, background-color, border-color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+/* Disable transitions for large areas to improve performance */
+body, main, section, footer, .bg-gray-50, .bg-gray-900 {
+  transition: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--theme-color) 70%, transparent);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-color);
+}
+
+/* Selection color */
+::selection {
+  background: color-mix(in srgb, var(--theme-color) 50%, transparent);
+  color: var(--text-primary);
+}
