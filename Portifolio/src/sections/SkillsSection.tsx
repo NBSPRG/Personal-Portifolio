@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import ProgressBar from '../components/ProgressBar';
 import AnimatedElement from '../components/AnimatedElement';
@@ -28,6 +28,8 @@ interface SkillCategory {
 const SkillsSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('languages');
   const [currentPage, setCurrentPage] = useState(0);
+  const [isPaginationAnimating, setIsPaginationAnimating] = useState(true);
+  const paginationRef = useRef<HTMLDivElement>(null);
   const itemsPerPage = 4; // Number of category buttons to show per page
 
   const skillsPages: SkillCategory[] = [
@@ -133,6 +135,30 @@ const SkillsSection: React.FC = () => {
     (page) => page.id === activeCategory
   )?.skills || [];
 
+  // Animation for pagination dots
+  useEffect(() => {
+    let animationInterval: ReturnType<typeof setInterval>;
+    
+    if (isPaginationAnimating) {
+      animationInterval = setInterval(() => {
+        const container = paginationRef.current;
+        if (container) {
+          // Adding a small right-to-left animation
+          container.style.transform = 'translateX(-5px)';
+          setTimeout(() => {
+            container.style.transform = 'translateX(0)';
+          }, 500);
+        }
+      }, 3000);
+    }
+
+    return () => {
+      if (animationInterval) {
+        clearInterval(animationInterval);
+      }
+    };
+  }, [isPaginationAnimating]);
+
   // Pagination controls
   const goToNextPage = () => {
     if (currentPage < totalPages - 1) {
@@ -191,8 +217,8 @@ const SkillsSection: React.FC = () => {
                     <button
                       className={`w-full p-4 rounded-lg flex flex-col items-center justify-center h-24 transition-all duration-300 ${
                         activeCategory === category.id
-                          ? 'bg-blue-500 text-white shadow-lg scale-105'
-                          : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 hover:scale-110 hover:shadow-md'
+                          ? 'bg-violet-500 text-white shadow-lg scale-105' 
+                          : 'bg-white dark:bg-gray-800 text-theme hover:bg-gray-100 dark:hover:bg-gray-700 hover:scale-105 hover:shadow-md'
                       }`}
                       onClick={() => handleCategoryClick(category.id)}
                       aria-label={`View ${category.title} skills`}
@@ -219,16 +245,21 @@ const SkillsSection: React.FC = () => {
             </div>
           </div>
           
-          {/* Pagination indicator */}
-          <div className="flex justify-center space-x-2">
+          {/* Pagination indicator with animation */}
+          <div 
+            ref={paginationRef}
+            className="flex justify-center space-x-2 transition-transform duration-500 ease-in-out"
+            onMouseEnter={() => setIsPaginationAnimating(false)}
+            onMouseLeave={() => setIsPaginationAnimating(true)}
+          >
             {Array.from({ length: totalPages }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentPage(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                className={`transition-all duration-300 rounded-full ${
                   currentPage === index
-                    ? 'bg-blue-500 w-6'
-                    : 'bg-gray-300 dark:bg-gray-600 hover:bg-blue-300 dark:hover:bg-blue-700'
+                    ? 'bg-blue-500 w-6 h-2'
+                    : 'bg-gray-300 dark:bg-gray-600 hover:bg-blue-300 dark:hover:bg-blue-700 w-2 h-2 hover:scale-150 hover:w-4'
                 }`}
                 aria-label={`Go to page ${index + 1}`}
               />
