@@ -117,11 +117,11 @@ const HeroSection: React.FC = () => {
               </a>
               {/* Substack Icon */}
               <a 
-                href="https://nbsprg.substack.com" 
+                href="https://chandan-blog.netlify.app/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-md"
-                aria-label="Substack Blog"
+                aria-label="Personal Blog"
               >
                 <NewspaperIcon size={20} />
               </a>
