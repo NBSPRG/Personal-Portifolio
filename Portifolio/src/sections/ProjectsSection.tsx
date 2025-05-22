@@ -42,7 +42,7 @@ const projects: Project[] = [
   },
   {
     "id": 5,
-    "title": "Parallel Matrix Multiplication using Custom Thread Pool",
+    "title": "Custom Database",
     "description": "Developed a multi-threaded matrix multiplication system using a custom thread pool to improve computational efficiency. Implemented a thread pool manager for optimized task distribution and minimized overhead. Ensured thread safety using mutexes and condition variables for safe concurrent execution.",
     "image": "https://www.researchgate.net/publication/311573402/figure/fig7/AS:575700685471744@1514269147526/a-Parallel-vector-addition-and-b-Parallel-vector-matrix-multiplication-steps-using-an.png",
     "tags": ["C++", "Multithreading", "Concurrency", "Thread Pool", "Synchronization"],
