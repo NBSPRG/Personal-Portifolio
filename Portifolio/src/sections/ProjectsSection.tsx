@@ -44,7 +44,7 @@ const projects: Project[] = [
     "id": 5,
     "title": "Custom Database",
     "description": "Developed a multi-threaded matrix multiplication system using a custom thread pool to improve computational efficiency. Implemented a thread pool manager for optimized task distribution and minimized overhead. Ensured thread safety using mutexes and condition variables for safe concurrent execution.",
-    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.smartsight.in%2Ftechnology%2F10-features-of-custom-database-development%2F&psig=AOvVaw1F32JR0UJ80rD9E83tX7qB&ust=1748013351427000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPDgxa-vt40DFQAAAAAdAAAAABAV",
+    "image": "https://www.intellspot.com/wp-content/uploads/2020/11/Effective-Free-Database-Software-Tools-to-Handle-Data-Properly-featured-image-2.jpg",
     "tags": ["C++", "Multithreading", "Concurrency", "Thread Pool", "Synchronization"],
     "githubUrl": "https://github.com/yourusername/parallel-matrix-multiplication",
     "liveUrl": ""
