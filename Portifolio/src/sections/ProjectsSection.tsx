@@ -19,7 +19,7 @@ const projects: Project[] = [
     description: 'An educational project aimed at understanding containerization by building a minimal container runtime from scratch. This project delves into Linux namespaces, cgroups, and other kernel features, without relying on containerd or runc.',
     image: 'https://w7.pngwing.com/pngs/621/725/png-transparent-linux-namespaces-cgroups-docker-kernel-container-text-media-transport-thumbnail.png',
     tags: ['Linux', 'Namespaces', 'cgroups', 'Containerization', 'Go'],
-    githubUrl: 'https://github.com/yourusername/build-your-own-container',
+    githubUrl: 'https://github.com/NBSPRG/Vessel',
     liveUrl: 'https://yourusername.github.io/build-your-own-container'
   },
   {
