@@ -182,36 +182,35 @@ const AboutSection: React.FC = () => {
             <Briefcase size={16} className="text-white" />
           </div>
           <div className="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm font-medium px-3 py-1 rounded-full mb-2">
-            Jan. 2024 - Apr. 2024
+            Jan. 2025 - Jun. 2025
           </div>
           <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-            Freelance Developer - Build With Peers
+            Software Engineering Intern - Adani Digital Labs
           </h4>
           <p className="text-gray-600 dark:text-gray-400">
-          Working on various web development projects. <br/> 
-          Collaborating with teams to deliver innovative digital solutions.
+            Built Python-based S3 monitoring service processing 1000+ daily operations with 99.9% uptime. <br/> 
+            Deployed on Kubernetes with Docker containerization, achieving 30-second detection latency.
           </p>
         </div>
       </AnimatedElement>
-
-      {/* Freelance Developer at TutorBin */}
+      {/* Software Engineering Intern at Tata Elxsi */}
       <AnimatedElement delay={400} className="mb-12">
         <div className="flex flex-col items-start">
           <div className="w-7 h-7 rounded-full bg-blue-500 flex items-center justify-center mb-2">
             <Briefcase size={16} className="text-white" />
           </div>
           <div className="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm font-medium px-3 py-1 rounded-full mb-2">
-            May. 2023 - Aug. 2023
+            May. 2024 - Jul. 2024
           </div>
           <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-            Freelance Developer - TutorBin
+            Software Engineering Intern - Tata Elxsi (Smart IoT Solutions)
           </h4>
           <p className="text-gray-600 dark:text-gray-400">
-            Provide programming tutoring and development solutions for students<br/> while also working on freelance projects in software engineering.
+            Developed smart parking MVP with Raspberry Pi and MQTT microservices processing sensor data every 300ms.<br/> 
+            Implemented Python decision engine with Matrix LED display achieving 1s response time.
           </p>
         </div>
       </AnimatedElement>
-
     </div>
   </div>
 </div>
